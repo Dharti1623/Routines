@@ -1,4 +1,5 @@
 import 'package:isar/isar.dart';
+import 'category.dart';
 
 @Collection()
 class Routine {
@@ -10,5 +11,5 @@ class Routine {
   @Index(caseSensitive: false)
   late String day;
   @Index(composite: [CompositeIndex('title')])
-  late String category;
+  final category = IsarLink<Category>();
 }
