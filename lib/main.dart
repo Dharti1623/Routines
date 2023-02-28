@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:isar/isar.dart';
+import 'package:routines/Collections/category.dart';
+import 'package:routines/Collections/routine.dart';
 import 'Network/NetworkHandler/network_binding.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
+
+Future<void> main() async {
+  final dir= await getApplicationSupportDirectory();
+  final isar = await Isar.open([RoutineSchema,CategorySchema]);
   runApp(const MyApp());
 }
 
@@ -22,9 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-/*
-return GetMaterialApp(
-      initialBinding: NetworkBinding(),
-    );
-*/

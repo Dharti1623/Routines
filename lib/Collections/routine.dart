@@ -1,10 +1,11 @@
 import 'package:isar/isar.dart';
 import 'category.dart';
+part 'routine.g.dart';
 
 @Collection()
-class Routine {
+class Routine{
   // @Id()
-  int id = Isar.autoIncrement;
+  Id id = Isar.autoIncrement;
   late String title;
   @Index()
   late DateTime startTime;
